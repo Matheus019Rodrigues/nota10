@@ -11,11 +11,11 @@ function insertPerson ($pdo, $nome, $sexo, $data_nasc, $telefone, $email, $senha
 $query->bindValue(":ds_email",$email);
 $query->execute();
 if($query->owCount()>0);
-{
+else{
 
     return false;
 
-}else
+}
 
     $query = $pdo->prepare("SELECT * FROM tb_pessoa ORDER BY id DESC");
 
